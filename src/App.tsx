@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import {ITodo, Task} from './features/task/Task';
+import {todosAPI} from './api/api';
+import {AddField} from './components/AddField/AddField';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = () => {
 
-export default App;
+    const [todos, setTodos] = useState<ITodo[]>([]);
+
+    const fetchTodos = () => todosAPI.fetchTodos(setTodos);
+
+    useEffect(() => {
+        fetchTodos();
+    }, []);
+
+    return (
+        <div className="App">
+            <AddField fetchTodos={fetchTodos}/>
+            {
+                todos.map((i: ITodo) =>
+                    <Task
+                        key={i._id}
+                        _id={i._id}
+                        title={i.title}
+                        completed={i.completed}
+                        fetchTodos={fetchTodos}
+                    />)
+            }
+        </div>
+    );
+};
