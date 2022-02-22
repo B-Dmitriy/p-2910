@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState} from 'react';
 import s from './AddField.module.css';
-import {todosAPI} from '../../api/api';
+import {todosAPI} from '../../api/todos-api';
 
 interface IProps {
     fetchTodos: () => void
@@ -17,7 +17,7 @@ export const AddField: React.FC<IProps> = props => {
 
     const addTodo = () => {
         todosAPI
-            .addTodo(title)
+            .createTodo(title)
             .then(() => {
                 setTitle('')
                 fetchTodos()

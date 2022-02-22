@@ -1,0 +1,28 @@
+.taskDescription {
+    display: flex;
+    align-items: start;
+    padding: 0.2em;
+    margin: 0.2em 0;
+    border-radius: 1em;
+    background-color: #f1d6d1;
+}
+
+.taskDescription__icon {
+    flex: 0 0 10%;
+    font-size: 1.4em;
+}
+
+.taskDescription__text {
+
+}
+
+.taskDescription__button {
+    margin-top: 0.3em;
+    margin-right: 0.3em;
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 1em;
+    height: 1em;
+}

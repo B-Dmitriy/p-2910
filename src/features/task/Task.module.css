@@ -1,37 +1,17 @@
 .task {
-    width: 400px;
-    display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
-    gap: 1em;
-    margin: 1em;
-    padding: 1em;
-    align-items: start;
-    background-image: linear-gradient(to right, #ff6c33, #b46aff);
-    border-radius: 1em;
+    font-weight: 600;
+    color: #222222;
+    border-bottom: 1px #383838 solid;
+    padding: .5em;
 }
 
-.task__checkbox {
-    height: 1.5em;
-    width: 1.5em;
-    cursor: pointer;
+.task__list {
+    list-style: none;
+    padding: .5em;
 }
 
-.task__text {
-    color: white;
-}
-
-.task__button {
-    height: 2em;
-    width: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #ff5858;
-    border: 1px solid white;
-    cursor: pointer;
-}
-
-.task__button:hover {
-    outline: #ff5858 2px solid;
+.task__deadline {
+    color: #383838;
+    font-size: 0.8em;
+    padding-left: 1em;
 }
